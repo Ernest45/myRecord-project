@@ -1,4 +1,4 @@
-package me.hanjun.springbootblog;
+package me.hanjun.springbootblogtest;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

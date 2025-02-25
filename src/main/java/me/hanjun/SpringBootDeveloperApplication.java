@@ -1,4 +1,4 @@
-package me.hanjun.springbootblog;
+package me.hanjun;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;

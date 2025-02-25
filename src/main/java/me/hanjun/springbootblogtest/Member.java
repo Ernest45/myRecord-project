@@ -1,4 +1,4 @@
-package me.hanjun.springbootblog;
+package me.hanjun.springbootblogtest;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
