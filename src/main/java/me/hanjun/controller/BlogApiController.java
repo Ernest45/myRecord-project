@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import me.hanjun.domain.Article;
 import me.hanjun.dto.AddArticleRequest;
 import me.hanjun.dto.ArticleResponse;
+import me.hanjun.dto.UpdateArticleRequest;
 import me.hanjun.service.BlogService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,11 +48,21 @@ public class BlogApiController {
     }
 
     @DeleteMapping("/api/articles/{id}")
-    private ResponseEntity<Void> deleteArticle(@PathVariable long id) {
+    public ResponseEntity<Void> deleteArticle(@PathVariable long id) {
         blogService.delete(id);
 
         return ResponseEntity.ok()
                 .build();
 
     }
+
+    @PutMapping("/api/articles/{id}")
+    public ResponseEntity<Article> updateArticle(@PathVariable long id,
+                                                 @RequestBody UpdateArticleRequest request) {
+        Article updateArticle = blogService.update(id, request);
+
+        return ResponseEntity.ok()
+                .body(updateArticle);
+    }
+
 }
