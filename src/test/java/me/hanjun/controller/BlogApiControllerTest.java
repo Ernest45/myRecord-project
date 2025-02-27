@@ -118,4 +118,36 @@ class BlogApiControllerTest {
                 .andExpect(jsonPath("$[0].title").value(title));
     }
 
+    @DisplayName("findArticle : 블로그 글 조회에 성공한다")
+    @Test
+    public void findArticle() throws Exception {
+        //given
+        //블로그 글 저장
+        final String url = "/api/articles/{id}";
+        final String content = "content";
+        final String title = "title";
+
+        Article savedArticle = blogRepository.save(Article
+                .builder()
+                .content(content)
+                .title(title)
+                .build());
+
+        //when
+        // 저장한 블로그 글의 id 값으로 api 호출
+        final ResultActions resultActions = mockMvc.perform(get(url
+                ,savedArticle.getId()));
+        // media 타입을 명시적으로 설정하지 않아도 spring에서 json으로 자동 지정
+
+
+        //then
+        //응답 코드가 200ok고 반환받은 content와 title이 같은 지 확인
+
+        resultActions
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.content").value(content))
+                .andExpect(jsonPath("$.title").value(title));
+        // jsonpath의 사용법
+    }
+
 }
