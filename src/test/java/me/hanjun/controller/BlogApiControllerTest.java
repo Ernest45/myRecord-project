@@ -3,6 +3,7 @@ package me.hanjun.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.hanjun.domain.Article;
 import me.hanjun.dto.AddArticleRequest;
+import me.hanjun.dto.UpdateArticleRequest;
 import me.hanjun.repository.BlogRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -174,5 +175,49 @@ class BlogApiControllerTest {
 
         assertThat(articles).isEmpty();
     }
+
+    @DisplayName("updateArticle : 블로그 글 수정에 성공한다.")
+    @Test
+    public void updateArticle() throws Exception {
+
+        //given
+        //블로그 글을 저장하고, 글 수정에 필요한 요청 객체를 만든다
+        final String url = "/api/articles/{id}";
+        final String title = "title";
+        final String content = "title";
+
+        Article savedarticle = blogRepository.save(Article.builder()
+                .content(content)
+                .title(title)
+                .build());
+
+        final String newTitle = "new Title";
+        final String newContent = "new Content";
+
+        UpdateArticleRequest request = new UpdateArticleRequest(newTitle, newContent);
+
+
+        //when
+        //update api로 수정 요청을 보낸다. 요청타입은json, given에서 만든 객체를 본문으로 보낸다
+
+        ResultActions result = mockMvc.perform(put(url, savedarticle.getId())
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(request)));
+
+
+        //then
+        //응답 코드가 200 ok 블로그 글 id로 조회 후 수정되었는 지 확인
+        result.andExpect(status().isOk());
+
+        Article article = blogRepository.findById(savedarticle.getId()).get();
+
+        assertThat(article.getContent()).isEqualTo(newContent);
+        assertThat(article.getTitle()).isEqualTo(newTitle);
+
+
+
+        //then
+    }
+
 
 }
