@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/controller/ExampleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/me/hanjun/controller/BlogApiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/hanjun/controller/BlogApiControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +88,7 @@
       <recent name="me.hanjun.springbootblog" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringBootDeveloperApplication">
+  <component name="RunManager" selected="Gradle.BlogApiControllerTest.updateArticle">
     <configuration name="BlogApiControllerTest.addArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,7 +185,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="TestControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BlogApiControllerTest.updateArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -198,7 +198,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;me.hanjun.springbootblog.TestControllerTest&quot;" />
+            <option value="&quot;me.hanjun.controller.BlogApiControllerTest.updateArticle&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BlogApiControllerTest.updateArticle" />
         <item itemvalue="Gradle.BlogApiControllerTest.deleteArticle" />
         <item itemvalue="Gradle.BlogApiControllerTest.findArticle" />
         <item itemvalue="Gradle.BlogApiControllerTest.findAllAriticles" />
         <item itemvalue="Gradle.BlogApiControllerTest.addArticle" />
-        <item itemvalue="Gradle.TestControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +235,7 @@
       <option name="presentableId" value="Default" />
       <updated>1739968416514</updated>
       <workItem from="1739968417874" duration="25173000" />
-      <workItem from="1740755775355" duration="2048000" />
+      <workItem from="1740755775355" duration="3692000" />
     </task>
     <servers />
   </component>
