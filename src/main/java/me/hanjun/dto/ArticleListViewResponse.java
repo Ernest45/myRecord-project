@@ -1,6 +1,7 @@
 package me.hanjun.dto;
 
 import lombok.Getter;
+import me.hanjun.domain.Article;
 
 @Getter
 public class ArticleListViewResponse {
@@ -9,9 +10,10 @@ public class ArticleListViewResponse {
     private final String title;
     private final String content;
 
-    public ArticleListViewResponse(Long id, String title, String content) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
+
+    public ArticleListViewResponse(Article article) {
+        this.id = article.getId();
+        this.title = article.getTitle();
+        this.content = article.getContent();
     }
 }
