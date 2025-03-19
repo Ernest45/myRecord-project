@@ -18,6 +18,7 @@ public class UserService {
         return userRepository.save(User.builder()
                 .email(dto.getEmail())
                 .password(bCryptPasswordEncoder.encode(dto.getPassword()))
+                // config에서 등록한 암호화 등록
                 .build()).getId();
     }
 
