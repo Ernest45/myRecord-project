@@ -6,11 +6,15 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
 import me.hanjun.domain.User;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @Service
@@ -58,7 +62,37 @@ public class TokenProvider {
         }
     }
 
+
+    // note 3 토큰 기반으로 인증 정보를 가져오는 메서드
     public Authentication getAuthentication(String token) {
         Claims claims = getClaims(token);
+        Set<SimpleGrantedAuthority> authority = Collections.singleton(
+                new SimpleGrantedAuthority("ROLE_USER"));
+
+
+        return new UsernamePasswordAuthenticationToken(new org.springframework.security.core.userdetails.User(
+                claims.getSubject(), "", authority), token, authority);
     }
+
+    // note 4 토큰 기반으로 유저 id 를 가져오는 메서드
+
+    public Long getUserId(String token) {
+        Claims claims = getClaims(token);
+        return claims.get("id", Long.class);
+    }
+
+    private Claims getClaims(String token) {
+        // 프로퍼티스 파일에 저장한 비밀 값으로 토큰을 복호화 한 뒤 클레임을 가져오는 메서드
+
+        return Jwts.parser() // 클레임 조회
+                .setSigningKey(jwtProperties.getSecretKey())
+                .parseClaimsJws(token)
+                .getBody();
+
+
+
+
+    }
+
+
 }
