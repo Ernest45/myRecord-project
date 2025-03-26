@@ -24,13 +24,13 @@ class TokenProviderTest {
     @Autowired
     private JwtProperties jwtProperties;
 
-//    @Test
-//    @DisplayName("JwtFactory 디버깅: getter가 제대로 동작하는지 확인")
-//    void debugJwtFactory() {
-//        // 디버깅 코드 추가
-//        JwtFactory factory = new JwtFactory("test", new Date(), new Date(), emptyMap());
-//        System.out.println(factory.getSubject()); // "test" 출력 확인
-//    }
+    @Test
+    @DisplayName("JwtFactory 디버깅: getter가 제대로 동작하는지 확인")
+    void debugJwtFactory() {
+        // 디버깅 코드 추가
+        JwtFactory factory = new JwtFactory("test", new Date(), new Date(), emptyMap());
+        System.out.println(factory.getSubject()); // "test" 출력 확인
+    }
 
     @Test
     @DisplayName("generateToken (): 유저 정보와 만료 기간을 전달해 토큰을 만들 수 있다")

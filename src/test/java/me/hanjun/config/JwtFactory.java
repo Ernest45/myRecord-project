@@ -3,8 +3,10 @@ package me.hanjun.config;
 import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.Duration;
 import java.util.Date;
@@ -13,7 +15,6 @@ import java.util.Map;
 import static java.util.Collections.emptyMap;
 
 @Getter
-@Builder
 public class JwtFactory {
 
     private String subject = "test@email.com";
@@ -22,7 +23,7 @@ public class JwtFactory {
     private Map<String, Object> claims = emptyMap();
     // emptyMap 싱글톤의 불변의 객체 생성 즉 테스트용이라서 읽기전용이라 생각하면 편함
 
-
+    @Builder
     public JwtFactory(String subject, Date issuedAt, Date expiration,
                       Map<String, Object> claims) {
         this.subject = subject != null ? subject : this.subject;
