@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/me/hanjun/config/JwtFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/hanjun/config/JwtFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/hanjun/config/JwtFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +80,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -99,7 +101,20 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.TokenProviderTest.generateToken">
-    <configuration name="BlogApiControllerTest.deleteArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JwtFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.hanjun.config.JwtFactory" />
+      <module name="springboot-blog.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.hanjun.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TokenProviderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +127,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;me.hanjun.controller.BlogApiControllerTest.deleteArticle&quot;" />
+            <option value="&quot;me.hanjun.config.TokenProviderTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -123,7 +138,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BlogApiControllerTest.findAllAriticles" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TokenProviderTest.debugJwtFactory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -136,55 +151,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;me.hanjun.controller.BlogApiControllerTest.findAllAriticles&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BlogApiControllerTest.findArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;me.hanjun.controller.BlogApiControllerTest.findArticle&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BlogApiControllerTest.updateArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;me.hanjun.controller.BlogApiControllerTest.updateArticle&quot;" />
+            <option value="&quot;me.hanjun.config.TokenProviderTest.debugJwtFactory&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,6 +186,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="TokenProviderTest.validToken_invalidToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;me.hanjun.config.TokenProviderTest.validToken_invalidToken&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="SpringBootDeveloperApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="springboot-blog.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="me.hanjun.SpringBootDeveloperApplication" />
@@ -229,10 +220,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.TokenProviderTest.generateToken" />
-        <item itemvalue="Gradle.BlogApiControllerTest.updateArticle" />
-        <item itemvalue="Gradle.BlogApiControllerTest.deleteArticle" />
-        <item itemvalue="Gradle.BlogApiControllerTest.findArticle" />
-        <item itemvalue="Gradle.BlogApiControllerTest.findAllAriticles" />
+        <item itemvalue="Gradle.TokenProviderTest.debugJwtFactory" />
+        <item itemvalue="Gradle.TokenProviderTest.validToken_invalidToken" />
+        <item itemvalue="Gradle.TokenProviderTest" />
+        <item itemvalue="Application.JwtFactory" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +240,9 @@
       <workItem from="1741368297431" duration="2457000" />
       <workItem from="1741603592982" duration="598000" />
       <workItem from="1742225549867" duration="9145000" />
-      <workItem from="1742901573826" duration="3014000" />
+      <workItem from="1742901573826" duration="4939000" />
+      <workItem from="1742976514336" duration="2661000" />
+      <workItem from="1742979428482" duration="90000" />
     </task>
     <servers />
   </component>
@@ -263,6 +256,15 @@
           <url>file://$PROJECT_DIR$/src/test/java/JUnitCycleTest.java</url>
           <line>42</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java</url>
+          <line>36</line>
+          <properties class="me.hanjun.config.TokenProviderTest" method="generateToken">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
