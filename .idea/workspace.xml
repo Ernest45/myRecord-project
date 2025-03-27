@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/me/hanjun/config/JwtFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/hanjun/config/JwtFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,44 +99,7 @@
       <recent name="me.hanjun.springbootblog" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TokenProviderTest.generateToken">
-    <configuration name="JwtFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="me.hanjun.config.JwtFactory" />
-      <module name="springboot-blog.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="me.hanjun.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TokenProviderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;me.hanjun.config.TokenProviderTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.TokenProviderTest.getAuthentication">
     <configuration name="TokenProviderTest.debugJwtFactory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -186,6 +148,54 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="TokenProviderTest.getAuthentication" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;me.hanjun.config.TokenProviderTest.getAuthentication&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="TokenProviderTest.validToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;me.hanjun.config.TokenProviderTest.validToken&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="TokenProviderTest.validToken_invalidToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -219,11 +229,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TokenProviderTest.generateToken" />
-        <item itemvalue="Gradle.TokenProviderTest.debugJwtFactory" />
+        <item itemvalue="Gradle.TokenProviderTest.getAuthentication" />
+        <item itemvalue="Gradle.TokenProviderTest.validToken" />
         <item itemvalue="Gradle.TokenProviderTest.validToken_invalidToken" />
-        <item itemvalue="Gradle.TokenProviderTest" />
-        <item itemvalue="Application.JwtFactory" />
+        <item itemvalue="Gradle.TokenProviderTest.debugJwtFactory" />
+        <item itemvalue="Gradle.TokenProviderTest.generateToken" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +252,9 @@
       <workItem from="1742225549867" duration="9145000" />
       <workItem from="1742901573826" duration="4939000" />
       <workItem from="1742976514336" duration="2661000" />
-      <workItem from="1742979428482" duration="2668000" />
+      <workItem from="1742979428482" duration="4481000" />
+      <workItem from="1743071477670" duration="3533000" />
+      <workItem from="1743076272103" duration="1222000" />
     </task>
     <servers />
   </component>
@@ -259,7 +271,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java</url>
-          <line>36</line>
+          <line>40</line>
           <properties class="me.hanjun.config.TokenProviderTest" method="generateToken">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
