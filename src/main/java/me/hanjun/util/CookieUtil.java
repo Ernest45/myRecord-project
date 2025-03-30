@@ -19,6 +19,7 @@ public class CookieUtil {
 
     public static void deleteCookie(HttpServletRequest request, HttpServletResponse response
             , String name) {
+        //삭제를 위해 기존 쿠키를 가져와서 만료시키고 만료시킨 쿠키를 저장시킴
 
         Cookie[] cookies = request.getCookies();
         if (cookies == null) {
@@ -31,6 +32,7 @@ public class CookieUtil {
                 cookie.setPath("/");
                 cookie.setMaxAge(0);
                 response.addCookie(cookie);
+                // 만료를 위해 maxAge도 0!
 
             }
         }
