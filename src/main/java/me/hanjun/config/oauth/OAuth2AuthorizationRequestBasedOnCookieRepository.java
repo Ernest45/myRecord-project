@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.client.web.AuthorizationRequestReposi
 import org.springframework.security.oauth2.core.endpoint.OAuth2AuthorizationRequest;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.util.WebUtils;
-@Repository
+
 public class OAuth2AuthorizationRequestBasedOnCookieRepository implements
         AuthorizationRequestRepository<OAuth2AuthorizationRequest> {
 
