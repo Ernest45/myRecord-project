@@ -42,15 +42,21 @@ public class WebOauthSecurityConfig {
 
         //토큰 방식으로 인증을 하기 때문에 기존에 사용하던 폼로그인, 세션 비활성화
         http.csrf().disable()
-                .httpBasic().disable()
-                .formLogin().disable()
-                .logout().disable();
+                //CSRF(사이트 간 요청 위조) 보호 비활성화. 토큰 기반 인증(JWT)에서는 세션이 없으므로 CSRF 공격 위험이 낮아서 꺼둠.
+                .httpBasic().disable() //HTTP Basic 인증(브라우저 팝업 로그인) 비활성화
+                .formLogin().disable() //폼로그인 비활성화
+                .logout().disable(); // 아래에서 커스터마이징.
+
 
         http.sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        //SessionCreationPolicy.STATELESS: 세션을 사용하지 않음.
+        //왜?: JWT 토큰으로 인증하니까 서버가 상태(세션)를 유지할 필요 없음. 클라이언트가 토큰을 헤더에 실어 보냄.
 
         //헤더를 확인할 커스텀 필드 추가
         http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+        //addFilterBefore(...UsernamePasswordAuthenticationFilter.class):
+        // Spring Security의 기본 인증 필터(UsernamePasswordAuthenticationFilter) 전에 실행.
 
         // 토큰 재발급 URL는 인증 없이도 접근 가능하도록 설정, 나머지 API URL은 인증 필요
         http.authorizeHttpRequests()
