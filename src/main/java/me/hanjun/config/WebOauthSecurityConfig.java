@@ -1,6 +1,8 @@
 package me.hanjun.config;
 
 import lombok.RequiredArgsConstructor;
+import me.hanjun.config.oauth.OAuth2AuthorizationRequestBasedOnCookieRepository;
+import me.hanjun.config.oauth.OAuth2SuccessHandler;
 import me.hanjun.config.oauth.Oauth2UserCustomService;
 import me.hanjun.repository.RefreshTokenRepository;
 import me.hanjun.service.UserService;
@@ -68,9 +70,9 @@ public class WebOauthSecurityConfig {
                 .loginPage("/login")
                 .authorizationEndpoint()
                 // Authorization 요청과 관련된 상태 저장
-                .authorizationRequestRepository(OAuth2AuthorizationREquestBasedOnCookieRepository())
+                .authorizationRequestRepository(oAuth2AuthorizationREquestBasedOnCookieRepository())
                 .and()
-                .successHandler(oAuth2SuccessHander()) // 인증 성공 시 실행할 핸들러
+                .successHandler(oAuth2SuccessHandler()) // 인증 성공 시 실행할 핸들러
                 .userInfoEndpoint()
                 .userService(oauth2UserCustomService);
 
@@ -98,10 +100,11 @@ public class WebOauthSecurityConfig {
     }
 
     @Bean
-    public OAuth2AuthorizationREquestBasedOnCookieRepository
+    // 세션을 안쓰고 쿠키로 활용하기 위해
+    public OAuth2AuthorizationRequestBasedOnCookieRepository
     oAuth2AuthorizationREquestBasedOnCookieRepository() {
 
-        return new OAuth2AuthorizationREquestBasedOnCookieRepository();
+        return new OAuth2AuthorizationRequestBasedOnCookieRepository();
     }
 
     @Bean
