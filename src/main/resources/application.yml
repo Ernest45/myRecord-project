@@ -23,6 +23,9 @@ spring:
           google:
             client-id: ${OAUTH_CLIENT_ID}
             client-secret: ${OAUTH_CLIENT_SECRET}
+            scope:
+              - email
+              - profile
 
 jwt:
   issuer: ajufresh@gmaile.com

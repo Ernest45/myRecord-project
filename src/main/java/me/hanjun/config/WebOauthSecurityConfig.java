@@ -1,25 +1,35 @@
 package me.hanjun.config;
 
 import lombok.RequiredArgsConstructor;
-import me.hanjun.config.oauth.OAuth2AuthorizationRequestBasedOnCookieRepository;
-import me.hanjun.config.oauth.OAuth2SuccessHandler;
-import me.hanjun.config.oauth.Oauth2UserCustomService;
+import lombok.extern.slf4j.Slf4j;
+import me.hanjun.config.oauth.*;
 import me.hanjun.repository.RefreshTokenRepository;
 import me.hanjun.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.ExceptionTranslationFilter;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
+import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
+@Slf4j
 @Configuration
 @RequiredArgsConstructor
 public class WebOauthSecurityConfig {
@@ -60,6 +70,7 @@ public class WebOauthSecurityConfig {
         //addFilterBefore(...UsernamePasswordAuthenticationFilter.class):
         // Spring Security의 기본 인증 필터(UsernamePasswordAuthenticationFilter) 전에 실행.
 
+
         // 토큰 재발급 URL는 인증 없이도 접근 가능하도록 설정, 나머지 API URL은 인증 필요
         http.authorizeHttpRequests()
                 .requestMatchers("/api/token").permitAll()
@@ -73,18 +84,25 @@ public class WebOauthSecurityConfig {
                 .authorizationRequestRepository(oAuth2AuthorizationREquestBasedOnCookieRepository())
                 .and()
                 .successHandler(oAuth2SuccessHandler()) // 인증 성공 시 실행할 핸들러
+                .failureHandler((request, response, exception) -> {
+                    log.error("OAuth2 authentication failed: {}", exception.getMessage(), exception);
+                    System.out.println("왜안돼");
+                    response.sendRedirect("/login?error=" + URLEncoder.encode(exception.getMessage(), StandardCharsets.UTF_8));
+                })
                 .userInfoEndpoint()
                 .userService(oauth2UserCustomService);
 
         http.logout()
                 .logoutSuccessUrl("/login");
 
-        // api로 시작하는 uri인 경우 401 상태 코드를 반환하도록 예외처리
-        http.exceptionHandling()
-                .defaultAuthenticationEntryPointFor(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)
-                        , new AntPathRequestMatcher("/api/**"));
+//         api로 시작하는 uri인 경우 401 상태 코드를 반환하도록 예외처리
+//        http.exceptionHandling()
+//                .defaultAuthenticationEntryPointFor(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)
+//                        , new AntPathRequestMatcher("/api/**"));
+
 
         return http.build();
+
     }
 
     @Bean
@@ -110,5 +128,11 @@ public class WebOauthSecurityConfig {
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
+        AuthenticationManagerBuilder authBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
+        return authBuilder.build();
     }
 }

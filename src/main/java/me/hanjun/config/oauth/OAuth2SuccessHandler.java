@@ -5,6 +5,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import me.hanjun.config.TokenProvider;
 import me.hanjun.domain.RefreshToken;
 import me.hanjun.domain.User;
@@ -20,7 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 import java.time.Duration;
-
+@Slf4j
 @RequiredArgsConstructor
 @Component
 public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
@@ -38,9 +40,16 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
+        log.info("OAuth2 authentication success");
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
+        log.info("OAuth2 user attributes: {}", oAuth2User.getAttributes());
+
         User user = userService.findByEmail((String) oAuth2User.getAttributes()
                 .get("email"));
+        if (user.getEmail() == null) {
+            log.error("Email not found in OAuth2 user attributes");
+            throw new IllegalStateException("Email not found in OAuth2 user attributes");
+        }
 
 
         // 리프레시 토큰 생성 -> 저장 -> 쿠키에 저장
@@ -54,8 +63,14 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
         //인증관련 설정값, 쿠키 제거
         clearAuthenticationAttributes(request, response);
+
         //리다이렉트
+        System.out.println("지금 리다이렉트하는중");
+        System.out.println(targetUrl);
+        log.info("Redirecting to targetUrl: {}", targetUrl);
         getRedirectStrategy().sendRedirect(request, response, targetUrl);
+        System.out.println("리 다렉 완료");
+
 
     }
 

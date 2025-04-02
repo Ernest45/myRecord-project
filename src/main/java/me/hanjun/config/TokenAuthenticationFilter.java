@@ -20,6 +20,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
+        System.out.println("토큰 검사");
 
         String authorizationHeader = request.getHeader(HEADER_AUTHORIZATION);
         //1. 헤더 Authorization의 값 가져오고
@@ -28,8 +29,10 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
         if (tokenProvider.validToken(token)) {
 
+
             Authentication authentication = tokenProvider.getAuthentication(token);
             SecurityContextHolder.getContext().setAuthentication(authentication);
+            System.out.println("저장됐냐?");
             //3. 유효하다면 저장
             //note 토큰 확인 후 다시 저장해주기!!
 

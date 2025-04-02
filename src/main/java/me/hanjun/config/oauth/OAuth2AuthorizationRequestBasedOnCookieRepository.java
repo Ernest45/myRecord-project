@@ -3,12 +3,13 @@ package me.hanjun.config.oauth;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import me.hanjun.util.CookieUtil;
 import org.springframework.security.oauth2.client.web.AuthorizationRequestRepository;
 import org.springframework.security.oauth2.core.endpoint.OAuth2AuthorizationRequest;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.util.WebUtils;
-
+@Slf4j
 public class OAuth2AuthorizationRequestBasedOnCookieRepository implements
         AuthorizationRequestRepository<OAuth2AuthorizationRequest> {
 
@@ -17,6 +18,8 @@ public class OAuth2AuthorizationRequestBasedOnCookieRepository implements
 
     @Override
     public OAuth2AuthorizationRequest loadAuthorizationRequest(HttpServletRequest request) {
+        log.info("성공");
+        System.out.println("쿠키");
 
         Cookie cookie = WebUtils.getCookie(request, OAUTH2_AUTHORIZATION_REQUEST_COOKIE_NAME);
         return CookieUtil.deserialize(cookie, OAuth2AuthorizationRequest.class);
@@ -28,6 +31,8 @@ public class OAuth2AuthorizationRequestBasedOnCookieRepository implements
             removeAuthorizationRequestCookies(request, response);
             return;
         }
+        log.info("성공");
+        System.out.println("쿠키");
         CookieUtil.addCookie(response, OAUTH2_AUTHORIZATION_REQUEST_COOKIE_NAME,
                 CookieUtil.serialize(authorizationRequest), COOKIE_EXPIRE_SECONDS);
     }

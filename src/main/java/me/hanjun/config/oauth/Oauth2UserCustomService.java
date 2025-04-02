@@ -1,6 +1,7 @@
 package me.hanjun.config.oauth;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.hanjun.domain.User;
 import me.hanjun.repository.UserRepository;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -10,7 +11,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
-
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class Oauth2UserCustomService extends DefaultOAuth2UserService {
@@ -22,16 +23,27 @@ public class Oauth2UserCustomService extends DefaultOAuth2UserService {
     public OAuth2User loadUser(OAuth2UserRequest userRequest)
             throws OAuth2AuthenticationException {
 
+        log.info("1Starting loadUser for OAuth2UserRequest: {}", userRequest);
         OAuth2User user = super.loadUser(userRequest);
+
+        log.info("2Calling saveOrUpdate for user: {}", user);
         saveOrUpdate(user);
+        log.info("3saveOrUpdate completed, savedUser: {}");
+        log.info("4Returning OAuth2User: {}", user);
         return user;
 
     }
 
     private User saveOrUpdate(OAuth2User oAuth2User) {
         Map<String, Object> attributes = oAuth2User.getAttributes();
+        log.info("OAuth2 user attributes: {}", oAuth2User.getAttributes());
         String email = (String) attributes.get("email");
+        if (email == null) {
+            log.error("Email not found in OAuth2 user attributes: {}", attributes);
+            throw new OAuth2AuthenticationException("Email not found in OAuth2 user attributes");
+        }
         String name = (String) attributes.get("name");
+        System.out.println("name = load 이후 네임");
         User user = userRepository.findByEmail(email)
                 .map(entity -> entity.update(name))
                 .orElse(User.builder()
