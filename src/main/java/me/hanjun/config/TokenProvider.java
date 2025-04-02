@@ -5,6 +5,7 @@ import io.jsonwebtoken.Header;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.hanjun.domain.User;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -18,6 +19,7 @@ import java.util.Set;
 
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class TokenProvider {
 
     private final JwtProperties jwtProperties;
@@ -55,8 +57,11 @@ public class TokenProvider {
             Jwts.parser()
                     .setSigningKey(jwtProperties.getSecretKey()) //
                     .parseClaimsJws(token);  // note 3,4 형식이 올바르지 않거나, 지원하지 않는 경우
+            log.info("jwtProperties.getSecretKey() :", jwtProperties.getSecretKey());
+
             return true;
         } catch (Exception e) { //복호화 과정에서 에러가 나면 유효하지 않은 토큰!
+            System.out.println(e);
             return false;
         }
     }

@@ -14,7 +14,7 @@ import java.util.Map;
 @Slf4j
 @RequiredArgsConstructor
 @Service
-public class Oauth2UserCustomService extends DefaultOAuth2UserService {
+public class OAuth2UserCustomService extends DefaultOAuth2UserService {
 
     private final UserRepository userRepository;
 
@@ -25,6 +25,9 @@ public class Oauth2UserCustomService extends DefaultOAuth2UserService {
 
         log.info("1Starting loadUser for OAuth2UserRequest: {}", userRequest);
         OAuth2User user = super.loadUser(userRequest);
+        if (user == null) {
+            throw new OAuth2AuthenticationException("OAuth2 사용자 정보를 가져올 수 없음");
+        }
 
         log.info("2Calling saveOrUpdate for user: {}", user);
         saveOrUpdate(user);
@@ -43,7 +46,7 @@ public class Oauth2UserCustomService extends DefaultOAuth2UserService {
             throw new OAuth2AuthenticationException("Email not found in OAuth2 user attributes");
         }
         String name = (String) attributes.get("name");
-        System.out.println("name = load 이후 네임");
+
         User user = userRepository.findByEmail(email)
                 .map(entity -> entity.update(name))
                 .orElse(User.builder()

@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/WebOauthSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/WebOAuthSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/CustomOAuth2LoginAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/Oauth2UserCustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2UserCustomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +45,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="HTML File" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -69,6 +78,8 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ernest/Desktop/develop/springboot-blog/src/main/resources/static/img&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,18 +99,21 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="me.hanjun.controller" />
       <recent name="me.hanjun.config" />
       <recent name="me.hanjun.service" />
-      <recent name="me.hanjun.controller" />
       <recent name="me.hanjun.springbootblog" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.TokenProviderTest.getUserId">
-    <configuration name="TokenProviderTest.debugJwtFactory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.SpringBootDeveloperApplication">
+    <configuration name="TokenApiControllerTest.createNewAccessToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +126,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;me.hanjun.config.TokenProviderTest.debugJwtFactory&quot;" />
+            <option value="&quot;me.hanjun.controller.TokenApiControllerTest.createNewAccessToken&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -228,11 +242,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TokenApiControllerTest.createNewAccessToken" />
         <item itemvalue="Gradle.TokenProviderTest.getUserId" />
         <item itemvalue="Gradle.TokenProviderTest.getAuthentication" />
         <item itemvalue="Gradle.TokenProviderTest.validToken" />
         <item itemvalue="Gradle.TokenProviderTest.validToken_invalidToken" />
-        <item itemvalue="Gradle.TokenProviderTest.debugJwtFactory" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +267,8 @@
       <workItem from="1742976514336" duration="2661000" />
       <workItem from="1742979428482" duration="4481000" />
       <workItem from="1743071477670" duration="3533000" />
-      <workItem from="1743076272103" duration="5977000" />
+      <workItem from="1743076272103" duration="68393000" />
+      <workItem from="1743613011120" duration="5590000" />
     </task>
     <servers />
   </component>
@@ -279,5 +294,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
