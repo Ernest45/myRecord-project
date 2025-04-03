@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/TokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/WebOauthSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/WebOAuthSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/CustomOAuth2LoginAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/Oauth2UserCustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2UserCustomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +258,7 @@
       <workItem from="1742979428482" duration="4481000" />
       <workItem from="1743071477670" duration="3533000" />
       <workItem from="1743076272103" duration="68393000" />
-      <workItem from="1743613011120" duration="5590000" />
+      <workItem from="1743613011120" duration="8596000" />
     </task>
     <servers />
   </component>

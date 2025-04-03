@@ -39,7 +39,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     private final UserService userService;
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,FilterChain chain, Authentication authentication) throws IOException {
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
         log.info("OAuth2 authentication success");
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
         log.info("OAuth2 user attributes: {}", oAuth2User.getAttributes());
