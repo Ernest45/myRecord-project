@@ -29,20 +29,17 @@ public class OAuth2UserCustomService extends DefaultOAuth2UserService {
             throw new OAuth2AuthenticationException("OAuth2 사용자 정보를 가져올 수 없음");
         }
 
-        log.info("2Calling saveOrUpdate for user: {}", user);
         saveOrUpdate(user);
-        log.info("3saveOrUpdate completed, savedUser: {}");
-        log.info("4Returning OAuth2User: {}", user);
+
         return user;
 
     }
 
     private User saveOrUpdate(OAuth2User oAuth2User) {
         Map<String, Object> attributes = oAuth2User.getAttributes();
-        log.info("OAuth2 user attributes: {}", oAuth2User.getAttributes());
         String email = (String) attributes.get("email");
         if (email == null) {
-            log.error("Email not found in OAuth2 user attributes: {}", attributes);
+
             throw new OAuth2AuthenticationException("Email not found in OAuth2 user attributes");
         }
         String name = (String) attributes.get("name");

@@ -40,9 +40,9 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
-        log.info("OAuth2 authentication success");
+
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
-        log.info("OAuth2 user attributes: {}", oAuth2User.getAttributes());
+
 
         User user = userService.findByEmail((String) oAuth2User.getAttributes()
                 .get("email"));
@@ -67,8 +67,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         clearAuthenticationAttributes(request, response);
 
         //리다이렉트
-        System.out.println("지금 리다이렉트하는중");
-        System.out.println(targetUrl);
+
         log.info("Redirecting to targetUrl: {}", targetUrl);
         getRedirectStrategy().sendRedirect(request, response, targetUrl);
         System.out.println("리 다렉 완료");
