@@ -1,4 +1,4 @@
-package me.hanjun.util;
+package me.hanjun.util.cookie;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
