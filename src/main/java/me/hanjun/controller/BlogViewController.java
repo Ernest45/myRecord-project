@@ -24,12 +24,10 @@ public class BlogViewController {
 
     @GetMapping("/articles")
     public String getArticles(Model model) {
-        List<ArticleListViewResponse> articles
-                = blogService.findAll()
+        List<ArticleListViewResponse> articles = blogService.findAll()
                 .stream()
                 .map(ArticleListViewResponse::new)
                 .toList();
-
         model.addAttribute("articles", articles);
 
         return "articleList";

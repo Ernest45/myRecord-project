@@ -8,9 +8,8 @@ spring:
 
     defer-datasource-initialization: true
 
-  datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
+
+
 
   h2:
     console:
@@ -21,12 +20,13 @@ spring:
       client:
         registration:
           google:
-            client-id: ${OAUTH_CLIENT_ID}
-            client-secret: ${OAUTH_CLIENT_SECRET}
+            client-id: 1
+            client-secret: 1
             scope:
               - email
               - profile
 
 jwt:
   issuer: ajufresh@gmaile.com
-  secret_key: ${JWT_SECRET_KEY}
+  secret_key: 1
+  #{OAUTH_CLIENT_ID}{OAUTH_CLIENT_SECRET}{JWT_SECRET_KEY}
