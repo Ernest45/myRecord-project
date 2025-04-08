@@ -20,13 +20,13 @@ spring:
       client:
         registration:
           google:
-            client-id: 1
-            client-secret: 1
+            client-id: 6636..
+            client-secret: GOCS..
             scope:
               - email
               - profile
 
 jwt:
   issuer: ajufresh@gmaile.com
-  secret_key: 1
+  secret_key: study-springboot
   #{OAUTH_CLIENT_ID}{OAUTH_CLIENT_SECRET}{JWT_SECRET_KEY}
