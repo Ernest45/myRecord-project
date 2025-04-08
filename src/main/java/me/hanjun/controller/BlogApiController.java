@@ -8,6 +8,7 @@ import me.hanjun.dto.UpdateArticleRequest;
 import me.hanjun.service.BlogService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -21,7 +22,7 @@ public class BlogApiController {
 
 
     @PostMapping("/api/articles")
-    public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request,
+    public ResponseEntity<Article> addArticle(@RequestBody @Validated AddArticleRequest request,
                                               Principal principal) {
 
         Article savedArticle = blogService.save(request, principal.getName());
