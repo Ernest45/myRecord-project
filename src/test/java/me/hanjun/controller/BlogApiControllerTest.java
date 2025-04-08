@@ -1,6 +1,7 @@
 package me.hanjun.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.javafaker.Faker;
 import me.hanjun.domain.Article;
 import me.hanjun.domain.User;
 import me.hanjun.dto.AddArticleRequest;
@@ -227,10 +228,72 @@ class BlogApiControllerTest {
 
 
 
-        //then
+
     }
 
+    @Test
+    @DisplayName("addArticle : 아티클을 추가할 때 title이 null이면 실패한다")
+    public void addArticleValidation() throws Exception {
+
+        //given
+
+        final String url = "/api/articles";
+        final String title = null;
+        final String content = "content";
+
+        AddArticleRequest addArticle = new AddArticleRequest(title, content);
+        final String requestBody = objectMapper.writeValueAsString(addArticle);
+
+        //principal 객체를 null로 목킹
+        Principal principal = Mockito.mock(Principal.class);
+        Mockito.when(principal.getName()).thenReturn("username");
+
+
+        //when
+        ResultActions actions = mockMvc.perform(post(url)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .principal(principal)
+                .content(requestBody));
+
+        //then
+        actions.andExpect(status().isBadRequest());
+    }
+
+
+    @DisplayName("addArticle : 아티클을 추가할 때 title이 10자가 넘으면 실패한다")
+    @Test
+    public void addArticleSizeValidation() throws Exception {
+
+        //given
+        Faker faker = new Faker();
+
+        final String url = "/api/articles";
+        final String title1 = "asdjakodanojvabnvav";
+        final String title = faker.lorem().characters(11);
+        //faker 객체로 11자 이상 만들기
+        final String content = "cotent";
+
+
+        AddArticleRequest articleRequest = new AddArticleRequest(title, content);
+        String requestBody = objectMapper.writeValueAsString(articleRequest);
+
+        Principal principal = Mockito.mock(Principal.class);
+        Mockito.when(principal.getName()).thenReturn("username");
+
+        //when
+        ResultActions result = mockMvc.perform(post(url)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .principal(principal)
+                .content(requestBody));
+
+
+        //then
+        result.andExpect(status().isBadRequest());
+    }
+
+
     private Article createdDefaultArticle() {
+
         return blogRepository.save(Article.builder()
                 .title("title")
                 .author(user.getUsername())
