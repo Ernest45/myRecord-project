@@ -1,23 +1,19 @@
 package me.hanjun.config.oauth;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import me.hanjun.config.TokenProvider;
 import me.hanjun.domain.RefreshToken;
 import me.hanjun.domain.User;
 import me.hanjun.repository.RefreshTokenRepository;
 import me.hanjun.service.UserService;
-import me.hanjun.util.CookieUtil;
+import me.hanjun.util.cookie.CookieUtil;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
-import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;

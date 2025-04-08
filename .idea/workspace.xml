@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/controller/BlogApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/controller/BlogApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/dto/AddArticleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/dto/AddArticleRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/util/error/CustomErrorAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/util/error/CustomErrorAttributes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,8 +107,8 @@
       <recent name="me.hanjun.springbootblog" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.BlogApiControllerTest.addArticleValidation">
-    <configuration name="BlogApiControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.BlogApiControllerTest.addArticleSizeValidation">
+    <configuration name="BlogApiControllerTest.addArticleSizeValidation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -119,7 +121,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;me.hanjun.controller.BlogApiControllerTest&quot;" />
+            <option value="&quot;me.hanjun.controller.BlogApiControllerTest.addArticleSizeValidation&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -233,11 +235,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BlogApiControllerTest.addArticleSizeValidation" />
         <item itemvalue="Gradle.BlogApiControllerTest.addArticleValidation" />
         <item itemvalue="Gradle.springboot-blog [build]" />
         <item itemvalue="Gradle.TestControllerTest.getAllMembers" />
         <item itemvalue="Gradle.TestControllerTest" />
-        <item itemvalue="Gradle.BlogApiControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -262,6 +264,7 @@
       <workItem from="1743613011120" duration="29749000" />
       <workItem from="1744052957200" duration="1879000" />
       <workItem from="1744069108677" duration="14835000" />
+      <workItem from="1744120121601" duration="1341000" />
     </task>
     <servers />
   </component>
