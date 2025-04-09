@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/util/error/CustomBaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/util/error/ErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/util/error/ErrorResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/oauth/OAuth2SuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/util/error/CustomErrorAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/util/error/CustomErrorAttributes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,7 @@
         <option value="JUnit5 Test Class" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -264,7 +265,7 @@
       <workItem from="1743613011120" duration="29749000" />
       <workItem from="1744052957200" duration="1879000" />
       <workItem from="1744069108677" duration="14835000" />
-      <workItem from="1744120121601" duration="1341000" />
+      <workItem from="1744120121601" duration="3340000" />
     </task>
     <servers />
   </component>
