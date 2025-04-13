@@ -56,12 +56,13 @@ public class WebOAuthSecurityConfig {
 
 
         http.authorizeRequests()
+                .requestMatchers("/login/**").permitAll()
                 .requestMatchers("/api/token").permitAll()
                 .requestMatchers("/api/**").authenticated()
                 .anyRequest().permitAll();
 
         http.oauth2Login()
-                .loginPage("/login")
+                .loginPage("/login1")
                 .authorizationEndpoint()
                 .authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository())
                 .and()
@@ -74,7 +75,7 @@ public class WebOAuthSecurityConfig {
                 .userService(oAuth2UserCustomService);
 
         http.logout()
-                .logoutSuccessUrl("/login");
+                .logoutSuccessUrl("/login1");
 
 
         http.exceptionHandling()
