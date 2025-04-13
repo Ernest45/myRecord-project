@@ -25,6 +25,9 @@ spring:
             scope:
               - email
               - profile
+          kakao:
+            client-id: 14vdv
+            redirect-uri:123
 
 jwt:
   issuer: ajufresh@gmaile.com
