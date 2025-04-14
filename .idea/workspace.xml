@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/util/kakao/KakaoUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/controller/OauthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/controller/OauthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/util/kakao/KakaoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/util/kakao/KakaoUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +90,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.SpringBootDeveloperApplication.executor": "Run",
+    "Spring Boot.SpringBootDeveloperApplication.executor": "Debug",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
@@ -299,7 +301,7 @@
       <workItem from="1744069108677" duration="14835000" />
       <workItem from="1744120121601" duration="10114000" />
       <workItem from="1744359895440" duration="5685000" />
-      <workItem from="1744550118949" duration="7603000" />
+      <workItem from="1744550118949" duration="24799000" />
     </task>
     <servers />
   </component>
@@ -313,6 +315,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/JUnitCycleTest.java</url>
           <line>42</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-oauth2-client/6.0.1/6ff8f49a7359aa1a79d25958b2e6d7d128a34238/spring-security-oauth2-client-6.0.1-sources.jar!/org/springframework/security/oauth2/client/web/DefaultOAuth2AuthorizationRequestResolver.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/me/hanjun/config/TokenProviderTest.java</url>
