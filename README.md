@@ -21,7 +21,8 @@ Spring Boot와 Spring Security를 사용한 블로그 프로젝트입니다.
 
 ## 배포 파이프라인
 
-![Uploading image.png…]()
+<img width="822" alt="image" src="https://github.com/user-attachments/assets/5fbfe566-210a-4254-8e00-35ae0863b6bd" />
+
 
 
 
@@ -110,6 +111,10 @@ git clone [repository-url]
 - Spring Security를 통한 OAuth2 인증
 - CSRF 보호
 - 적절한 보안 헤더 설정
+
+## 리팩토링
+kakao OAuth2 추가
+https://ernest45.tistory.com/202
 
 ## 라이센스
 
