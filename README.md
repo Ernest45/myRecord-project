@@ -21,7 +21,8 @@ Spring Boot와 Spring Security를 사용한 블로그 프로젝트입니다.
 
 ## 배포 파이프라인
 
-<img width="799" alt="image" src="https://github.com/user-attachments/assets/d99d8643-660a-45e2-9398-b422f9b0f565" />
+![Uploading image.png…]()
+
 
 
 ### 배포 프로세스
