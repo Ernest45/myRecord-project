@@ -21,38 +21,18 @@ Spring Boot와 Spring Security를 사용한 블로그 프로젝트입니다.
 
 ## 배포 파이프라인
 
-```mermaid
-graph LR
-    A[GitHub Repository] -->|Push| B[GitHub Actions]
-    B -->|CI/CD| C[Build & Test]
-    C -->|Success| D[Create Docker Image]
-    D -->|Push| E[Amazon ECR]
-    E -->|Deploy| F[AWS Elastic Beanstalk]
-    F -->|Environment| G[Production]
-    
-    subgraph GitHub
-    A
-    B
-    C
-    end
-    
-    subgraph AWS
-    E
-    F
-    G
-    end
-```
+<img width="799" alt="image" src="https://github.com/user-attachments/assets/d99d8643-660a-45e2-9398-b422f9b0f565" />
+
 
 ### 배포 프로세스
 
 1. **GitHub Actions Workflow**
    - 코드 푸시 시 자동 트리거
    - Gradle 빌드 및 테스트 실행
-   - Docker 이미지 생성
-   - Amazon ECR에 이미지 푸시
+   - Amazon s3에 jar 이미지 푸시
 
 2. **AWS Elastic Beanstalk**
-   - ECR에서 최신 이미지 가져오기
+   - EC2에서 최신 이미지 가져오기
    - 자동 스케일링 구성
    - 환경 변수 관리
    - 로드 밸런싱
