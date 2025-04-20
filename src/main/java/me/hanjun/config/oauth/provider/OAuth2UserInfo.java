@@ -1,4 +1,20 @@
 package me.hanjun.config.oauth.provider;
 
-public class OAuth2UserInfo {
+import java.util.Map;
+
+public interface OAuth2UserInfo {
+
+    OAuth2Provider provider();
+
+    String getAccessToken();
+
+    Map<String, Object> getAttributes();
+
+    String getId();
+
+    String getEmail();
+
+    String getName();
+
+    String getNickname();
 }
