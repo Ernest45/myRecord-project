@@ -1,7 +1,7 @@
 # Spring Boot Blog
 
 Spring Boot와 Spring Security를 사용한 블로그 프로젝트입니다.
-개발 과정
+-개발 과정
 https://ernest45.tistory.com/172
 
 ## 주요 기능
