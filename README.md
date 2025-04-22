@@ -1,6 +1,8 @@
 # Spring Boot Blog
 
 Spring Boot와 Spring Security를 사용한 블로그 프로젝트입니다.
+개발 과정
+https://ernest45.tistory.com/172
 
 ## 주요 기능
 
@@ -115,6 +117,20 @@ git clone [repository-url]
 ## 리팩토링
 kakao OAuth2 추가
 https://ernest45.tistory.com/202
+
+## 트러블 슈팅
+AWS Elastic Beanstalk 배포 중 build 실패 대처
+https://ernest45.tistory.com/191
+
+배포 후 Oauth2 500 에러? -트러블 슈팅
+https://ernest45.tistory.com/193
+
+다중 SecurityFilterChain 우선 순위 : 트러블 슈팅
+https://ernest45.tistory.com/212
+
+OAuth2 카카오 도전기 중 트러플 슈팅
+https://ernest45.tistory.com/218
+
 
 ## 라이센스
 
