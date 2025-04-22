@@ -115,20 +115,20 @@ git clone [repository-url]
 - 적절한 보안 헤더 설정
 
 ## 리팩토링
-kakao OAuth2 추가
+kakao OAuth2 추가   
 https://ernest45.tistory.com/202
 
 ## 트러블 슈팅
-AWS Elastic Beanstalk 배포 중 build 실패 대처
+AWS Elastic Beanstalk 배포 중 build 실패 대처   
 https://ernest45.tistory.com/191
 
-배포 후 Oauth2 500 에러? -트러블 슈팅
+배포 후 Oauth2 500 에러? -트러블 슈팅   
 https://ernest45.tistory.com/193
 
-다중 SecurityFilterChain 우선 순위 : 트러블 슈팅
+다중 SecurityFilterChain 우선 순위 : 트러블 슈팅   
 https://ernest45.tistory.com/212
 
-OAuth2 카카오 도전기 중 트러플 슈팅
+OAuth2 카카오 도전기 중 트러플 슈팅   
 https://ernest45.tistory.com/218
 
 
