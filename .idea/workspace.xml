@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="" />
+    <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/SpringBootDeveloperApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/config/WebOAuthSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/WebOAuthSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/controller/UserViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/controller/UserViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/oauthLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/oauthLogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/oauthLogin1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/oauthLogin1.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,8 +46,8 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -296,6 +305,7 @@
       <workItem from="1744359895440" duration="5685000" />
       <workItem from="1744550118949" duration="32828000" />
       <workItem from="1744719746020" duration="16946000" />
+      <workItem from="1745173782181" duration="17799000" />
     </task>
     <servers />
   </component>

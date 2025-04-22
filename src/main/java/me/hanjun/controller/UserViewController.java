@@ -8,7 +8,7 @@ public class UserViewController {
 
     @GetMapping("/login")
     public String login() {
-        return "oauthLogin1";
+        return "oauthLogin";
     }
 
     @GetMapping("/signup")

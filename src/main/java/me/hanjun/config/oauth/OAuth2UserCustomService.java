@@ -30,6 +30,8 @@ public class OAuth2UserCustomService extends DefaultOAuth2UserService {
 
     @Override
     // 이 메서드로 자동으로 http요청을 보내주고 그걸 난 저장만하면 됨 (파싱  url마추고 다 해줌..)
+    // OAuth2 제공자로부터 받은 액세스 토큰을 사용해 사용자 정보를 요청하고,
+    // 이를 Spring Security의 OAuth2User 객체로 변환해 인증 처리를 진행
     public OAuth2User loadUser(OAuth2UserRequest userRequest)
             throws OAuth2AuthenticationException {
 

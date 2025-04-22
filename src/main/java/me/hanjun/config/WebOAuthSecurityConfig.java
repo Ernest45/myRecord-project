@@ -62,7 +62,7 @@ public class WebOAuthSecurityConfig {
                 .anyRequest().permitAll();
 
         http.oauth2Login()
-                .loginPage("/login1")
+                .loginPage("/login")
                 .authorizationEndpoint()
                 .authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository())
                 .and()
@@ -75,7 +75,7 @@ public class WebOAuthSecurityConfig {
                 .userService(oAuth2UserCustomService);
 
         http.logout()
-                .logoutSuccessUrl("/login1");
+                .logoutSuccessUrl("/login");
 
 
         http.exceptionHandling()
