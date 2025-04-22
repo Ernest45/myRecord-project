@@ -128,7 +128,7 @@ https://ernest45.tistory.com/193
 다중 SecurityFilterChain 우선 순위 : 트러블 슈팅   
 https://ernest45.tistory.com/212
 
-OAuth2 카카오 도전기 중 트러플 슈팅   
+OAuth2 카카오 도전기 중 트러블 슈팅   
 https://ernest45.tistory.com/218
 
 
