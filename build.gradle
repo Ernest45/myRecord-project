@@ -24,6 +24,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'com.mysql:mysql-connector-j'
+    // AWS SDK for Java 2.x - S3 모듈
+    implementation 'software.amazon.awssdk:s3:2.26.27' // 최신 버전 확인
     testImplementation 'org.projectlombok:lombok:1.18.28'
     runtimeOnly 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok'

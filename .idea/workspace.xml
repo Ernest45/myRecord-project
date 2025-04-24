@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2c89a0c-0d59-471d-ad7a-94cbbe9750fe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/config/S3Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/hanjun/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/hanjun/domain/Article.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +303,7 @@
       <workItem from="1744719746020" duration="16946000" />
       <workItem from="1745173782181" duration="17799000" />
       <workItem from="1745323057440" duration="2766000" />
-      <workItem from="1745447045955" duration="2005000" />
+      <workItem from="1745447045955" duration="6592000" />
     </task>
     <servers />
   </component>

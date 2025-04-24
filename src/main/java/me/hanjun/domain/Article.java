@@ -31,10 +31,13 @@ public class Article {
 
     @Column(name = "content", nullable = false)
     private String content;
+    @Column(name = "image", nullable = true)
+    private String image;
 
     @CreatedDate
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
 
     @LastModifiedDate
     @Column(name = "updated_at")
