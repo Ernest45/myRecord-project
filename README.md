@@ -23,20 +23,51 @@ https://ernest45.tistory.com/172
 
 ## 배포 파이프라인
 
+<<<<<<< HEAD
 <img width="822" alt="image" src="https://github.com/user-attachments/assets/5fbfe566-210a-4254-8e00-35ae0863b6bd" />
 
 
 
+=======
+```mermaid
+graph LR
+    A[GitHub Repository] -->|Push| B[GitHub Actions]
+    B -->|CI/CD| C[Build & Test]
+    C -->|Success| D[Create JAR]
+    D -->|Deploy| E[AWS Elastic Beanstalk]
+    E -->|Environment| F[Production]
+    
+    subgraph GitHub
+    A
+    B
+    C
+    D
+    end
+    
+    subgraph AWS
+    E
+    F
+    end
+```
+>>>>>>> dce2742 ( redis 설정들)
 
 ### 배포 프로세스
 
 1. **GitHub Actions Workflow**
    - 코드 푸시 시 자동 트리거
    - Gradle 빌드 및 테스트 실행
+<<<<<<< HEAD
    - Amazon s3에 jar 이미지 푸시
 
 2. **AWS Elastic Beanstalk**
    - EC2에서 최신 이미지 가져오기
+=======
+   - JAR 파일 생성
+   - AWS Elastic Beanstalk 배포
+
+2. **AWS Elastic Beanstalk**
+   - JAR 파일 배포
+>>>>>>> dce2742 ( redis 설정들)
    - 자동 스케일링 구성
    - 환경 변수 관리
    - 로드 밸런싱

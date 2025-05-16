@@ -6,7 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.hanjun.config.TokenProvider;
 import me.hanjun.domain.RefreshToken;
+import me.hanjun.domain.RefreshTokenRedis;
 import me.hanjun.domain.User;
+import me.hanjun.repository.RefreshTokenRedisRepository;
 import me.hanjun.repository.RefreshTokenRepository;
 import me.hanjun.service.UserService;
 import me.hanjun.util.cookie.CookieUtil;
@@ -28,9 +30,9 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     public static final Duration REFRESH_TOKEN_DURATION = Duration.ofDays(14);
     public static final Duration ACCESS_TOKEN_DURATION = Duration.ofDays(1);
     public static final String REDIRECT_PATH = "/articles";
-
     private final TokenProvider tokenProvider;
     private final RefreshTokenRepository refreshTokenRepository;
+    private final RefreshTokenRedisRepository refreshTokenRedisRepository;
     private final OAuth2AuthorizationRequestBasedOnCookieRepository authorizationRequestRepository;
     private final UserService userService;
 
@@ -79,6 +81,9 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
                 .orElse(new RefreshToken(userId, newRefreshToken));
 
         refreshTokenRepository.save(refreshToken);
+    //--------------------------------------------------------------------------------------
+        RefreshTokenRedis refreshTokenRedis = new RefreshTokenRedis(newRefreshToken, userId);
+        refreshTokenRedisRepository.save(refreshTokenRedis);
     }
 
     //생성된 리프레시 토큰을 쿠키에 저장

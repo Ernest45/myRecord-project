@@ -1,6 +1,7 @@
 package me.hanjun.domain;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
