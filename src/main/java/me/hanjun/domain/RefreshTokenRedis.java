@@ -11,10 +11,3 @@ public class RefreshTokenRedis {
 
     @Id
     private String refreshTokenRedis;
-    private Long userId;
-
-    public RefreshTokenRedis(String refreshTokenRedis, Long userId) {
-        this.refreshTokenRedis = refreshTokenRedis;
-        this.userId = userId;
-    }
-}
