@@ -7,6 +7,7 @@ import me.hanjun.config.TokenAuthenticationFilter;
 import me.hanjun.config.oauth.OAuth2AuthorizationRequestBasedOnCookieRepository;
 import me.hanjun.config.oauth.OAuth2SuccessHandler;
 import me.hanjun.config.oauth.OAuth2UserCustomService;
+import me.hanjun.repository.RefreshTokenRedisRepository;
 import me.hanjun.repository.RefreshTokenRepository;
 import me.hanjun.service.UserService;
 import org.springframework.context.annotation.Bean;
@@ -33,6 +34,7 @@ public class WebOAuthSecurityConfig {
     private final OAuth2UserCustomService oAuth2UserCustomService;
     private final TokenProvider tokenProvider;
     private final RefreshTokenRepository refreshTokenRepository;
+    private final RefreshTokenRedisRepository refreshTokenRedisRepository;
     private final UserService userService;
 
     @Bean
@@ -90,7 +92,7 @@ public class WebOAuthSecurityConfig {
     @Bean
     public OAuth2SuccessHandler oAuth2SuccessHandler() {
         return new OAuth2SuccessHandler(tokenProvider,
-                refreshTokenRepository,
+                refreshTokenRepository, refreshTokenRedisRepository,
                 oAuth2AuthorizationRequestBasedOnCookieRepository(),
                 userService
         );

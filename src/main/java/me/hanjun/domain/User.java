@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Table(name = "users")
-@Entity
+@jakarta.persistence.Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User implements UserDetails {
 

@@ -22,7 +22,9 @@ public class TokenService {
         }
 
         Long userId = refreshTokenService.findByRefreshToken(refreshToken).getUserId();
-        User user = userService.findById(userId);
+        //-----------------------------------------------------------------------------
+        Long userIdRedis = refreshTokenService.findByRefreshToken(refreshToken).getUserId();
+        User user = userService.findById(userIdRedis);
 
         return tokenProvider.generateToken(user, Duration.ofHours(2));
     }
