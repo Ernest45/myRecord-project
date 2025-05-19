@@ -8,10 +8,11 @@ https://ernest45.tistory.com/172
 
 - JWT 기반 인증 시스템
 - Google OAuth2 로그인
-- kakao OAuth2 추가
 - 블로그 글 CRUD 기능
 - 사용자 관리
-- redis로 refresh Token 관리
+- Redis 기반 리프레시 토큰 관리
+- 회원 간 팔로우/팔로워 기능
+- 이메일 인증 기반 회원가입
 
 ## 기술 스택
 
@@ -20,17 +21,11 @@ https://ernest45.tistory.com/172
 - Spring Security
 - Spring Data JPA
 - MySQL
+- Redis
 - Thymeleaf
 - JWT
-- redis
 
 ## 배포 파이프라인
-
-<<<<<<< HEAD
-<img width="822" alt="image" src="https://github.com/user-attachments/assets/5fbfe566-210a-4254-8e00-35ae0863b6bd" />
-
-
-
 
 ```mermaid
 graph LR
@@ -51,31 +46,31 @@ graph LR
     E
     F
     end
+
+    G[Redis on EC2] -->|Cache| F
 ```
->>>>>>> dce2742 ( redis 설정들)
 
 ### 배포 프로세스
 
 1. **GitHub Actions Workflow**
    - 코드 푸시 시 자동 트리거
    - Gradle 빌드 및 테스트 실행
-<<<<<<< HEAD
-   - Amazon s3에 jar 이미지 푸시
-
-2. **AWS Elastic Beanstalk**
-   - EC2에서 최신 이미지 가져오기
-=======
    - JAR 파일 생성
    - AWS Elastic Beanstalk 배포
 
 2. **AWS Elastic Beanstalk**
    - JAR 파일 배포
->>>>>>> dce2742 ( redis 설정들)
    - 자동 스케일링 구성
    - 환경 변수 관리
    - 로드 밸런싱
 
-3. **환경 변수 관리**
+3. **Redis 서버**
+   - Docker 기반 Redis 컨테이너
+   - EC2 인스턴스에서 실행
+   - 리프레시 토큰 저장 및 관리
+   - TTL 기반 자동 만료 처리
+
+4. **환경 변수 관리**
    - AWS Systems Manager Parameter Store 사용
    - 보안 정보 암호화 저장
    - 환경별 설정 분리
@@ -86,6 +81,7 @@ graph LR
 
 - Java 17 이상
 - MySQL
+- Redis
 - Google OAuth2 클라이언트 ID와 시크릿
 
 ### 환경 설정
@@ -94,6 +90,8 @@ graph LR
 ```env
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
+REDIS_HOST=localhost
+REDIS_PORT=6379
 ```
 
 2. `application.yml` 설정
@@ -109,6 +107,9 @@ spring:
             scope:
               - email
               - profile
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
 ```
 
 ### 실행 방법
@@ -123,7 +124,12 @@ git clone [repository-url]
 ./gradlew build
 ```
 
-3. 애플리케이션 실행
+3. Redis 서버 실행
+```bash
+docker run -d --name redis -p 6379:6379 redis:latest
+```
+
+4. 애플리케이션 실행
 ```bash
 ./gradlew bootRun
 ```
@@ -133,6 +139,7 @@ git clone [repository-url]
 ### 인증
 - `POST /api/token`: JWT 토큰 발급
 - `GET /oauth2/authorization/google`: Google OAuth2 로그인
+- `POST /api/token/refresh`: 리프레시 토큰으로 액세스 토큰 재발급
 
 ### 블로그
 - `GET /api/articles`: 블로그 글 목록 조회
@@ -141,10 +148,17 @@ git clone [repository-url]
 - `PUT /api/articles/{id}`: 블로그 글 수정
 - `DELETE /api/articles/{id}`: 블로그 글 삭제
 
+### 사용자
+- `POST /api/users/signup`: 회원가입
+- `POST /api/users/verify-email`: 이메일 인증
+- `POST /api/users/follow/{userId}`: 사용자 팔로우
+- `DELETE /api/users/follow/{userId}`: 사용자 언팔로우
+
 ## 보안
 
 - JWT를 사용한 인증
 - Spring Security를 통한 OAuth2 인증
+- Redis를 사용한 리프레시 토큰 관리
 - CSRF 보호
 - 적절한 보안 헤더 설정
 
