@@ -8,8 +8,10 @@ https://ernest45.tistory.com/172
 
 - JWT 기반 인증 시스템
 - Google OAuth2 로그인
+- kakao OAuth2 추가
 - 블로그 글 CRUD 기능
 - 사용자 관리
+- redis로 refresh Token 관리
 
 ## 기술 스택
 
@@ -20,6 +22,7 @@ https://ernest45.tistory.com/172
 - MySQL
 - Thymeleaf
 - JWT
+- redis
 
 ## 배포 파이프라인
 
@@ -28,7 +31,7 @@ https://ernest45.tistory.com/172
 
 
 
-=======
+
 ```mermaid
 graph LR
     A[GitHub Repository] -->|Push| B[GitHub Actions]
