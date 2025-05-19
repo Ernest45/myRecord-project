@@ -47,7 +47,7 @@ graph LR
     F
     end
 
-    G[Redis on EC2] -->|Cache| F
+    G[Redis on M1mac] -->|Cache| F
 ```
 
 ### 배포 프로세스
