@@ -11,8 +11,6 @@ https://ernest45.tistory.com/172
 - 블로그 글 CRUD 기능
 - 사용자 관리
 - Redis 기반 리프레시 토큰 관리
-- 회원 간 팔로우/팔로워 기능
-- 이메일 인증 기반 회원가입
 
 ## 기술 스택
 
@@ -179,6 +177,9 @@ https://ernest45.tistory.com/212
 
 OAuth2 카카오 도전기 중 트러블 슈팅   
 https://ernest45.tistory.com/218
+
+db로 관리하는 refresh Token을 redis로 관리해보기
+https://ernest45.tistory.com/231
 
 
 ## 라이센스
