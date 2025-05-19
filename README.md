@@ -68,7 +68,6 @@ graph LR
 
 3. **Redis 서버**
    - Docker 기반 Redis 컨테이너
-   - EC2 인스턴스에서 실행
    - 리프레시 토큰 저장 및 관리
    - TTL 기반 자동 만료 처리
 
