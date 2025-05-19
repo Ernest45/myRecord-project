@@ -178,7 +178,7 @@ https://ernest45.tistory.com/212
 OAuth2 카카오 도전기 중 트러블 슈팅   
 https://ernest45.tistory.com/218
 
-db로 관리하는 refresh Token을 redis로 관리해보기
+db로 관리하는 refresh Token을 redis로 관리해보기   
 https://ernest45.tistory.com/231
 
 
