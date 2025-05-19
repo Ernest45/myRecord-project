@@ -26,6 +26,8 @@ https://ernest45.tistory.com/172
 - JWT
 
 ## 배포 파이프라인
+<img width="822" alt="image" src="https://github.com/user-attachments/assets/f6690017-36ae-4cc6-ae30-97cd0ac246cf" />
+
 
 ```mermaid
 graph LR
